@@ -1,0 +1,11 @@
+.appbar {
+    width: 100%;
+    position: fixed;
+    left: 0;    
+    top: 0;
+    height: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    padding: 13px;
+    padding-right: 100px;
+  }

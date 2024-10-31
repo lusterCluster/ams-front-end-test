@@ -1,0 +1,96 @@
+.desktop {
+    display: grid;
+    padding: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 100vh;    
+    margin: 100px 50px;
+    
+    place-items: center;
+    row-gap: 55px;
+    column-gap: 34px;
+  }
+  
+  .mobile {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 640px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: grid;
+    }
+  }
+  @media only screen and (min-width: 2560px) {
+    .desktop {
+      display: grid;
+      padding: 16px;
+      grid-template-columns: repeat(12, 1fr);
+      place-items: center;    
+    }
+  }
+  
+  .robotoThin {
+    font-family: "Roboto", serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .robotoThinItalic {
+    font-family: "Roboto", serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .robotoLight {
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .robotoLightItalic {
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .robotoRegular {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .robotoRegularItalic {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .robotoMedium {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .robotoMediumItalic {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .robotoBold {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .robotoBoldItalic {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+ 
+  
