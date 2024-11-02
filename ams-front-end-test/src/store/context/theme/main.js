@@ -1,13 +1,21 @@
 import { createContext, useLayoutEffect } from "react";
-import { EndlessSpring,  isDarkMode,  Shade } from "./themes";
+import { AtunumEmber,   Shade } from "./themes";
+import useLocalStorage from "../../../hooks/useLocalStorage";
 
 export const ThemeContext = createContext(undefined)
 
 const ProvideThemeContext = (props) => {
     const toggleDarkMode = () => localStorage.setItem("isDark", isDarkMode() ? "1": "0")
-    
+    const {value} = useLocalStorage("isDark", "0")
+    const isDarkMode = () => {
+        if(value === "0") {
+            return true
+        }
+        else return false
+    }
     const themeContext = {
-        theme: EndlessSpring,
+        isDarkMode: isDarkMode,
+        theme: AtunumEmber,
         toggleDarkMode: toggleDarkMode
     }
 
