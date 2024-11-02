@@ -7,5 +7,5 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 13px;
-  padding-right: 100px;
+  
 }

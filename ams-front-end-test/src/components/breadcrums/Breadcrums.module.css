@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    height: 1.3rem;
+    justify-content: right;
+    margin-top: 8px;
+}
+.breadcrums{
+    color: white;    
+    border-right: 0.5px solid white;    
+    padding-right: 10px; 
+    margin-left: 10px;
+    
+
+}

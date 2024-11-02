@@ -1,0 +1,15 @@
+.container {
+    display: flex;    
+    justify-content: right;
+    margin-right: 35px;
+    position: relative;
+    
+}
+.cartLogo{
+    background-color: white;
+    border-radius: 100%;
+    top: 10%;
+    right: 1%;
+    position: absolute;
+    padding: 3px;
+}

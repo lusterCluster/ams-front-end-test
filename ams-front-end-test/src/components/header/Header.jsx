@@ -3,6 +3,9 @@ import { ThemeContext } from "../../store/context/theme/main";
 import styles from './Header.module.css'
 import { isDarkMode, Shade } from "../../store/context/theme/themes";
 import Logo from "../logo/Logo";
+import Breadcrums from "../breadcrums/Breadcrums";
+import { CartLogo } from "../cart/cartlogo/CartLogo";
+
 
 
 
@@ -24,7 +27,8 @@ const Header = () => {
 
       
       <Logo/>
-      {/* <BreadCrums /> */}
+      <Breadcrums/>
+      <CartLogo/>
         {/* <ColorMode/> */}
     </div>
     </>

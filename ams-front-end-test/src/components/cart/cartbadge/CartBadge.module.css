@@ -1,0 +1,12 @@
+.cartBadge{
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 100%;
+    background-color: red;
+    text-align: center;
+    
+    transform: translateX(3);
+}
