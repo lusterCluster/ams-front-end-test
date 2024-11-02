@@ -9,12 +9,3 @@
   padding: 13px;
   padding-right: 100px;
 }
-.logo {
-  grid-column-start: 1;
-  display: flex;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
-  object-fit: cover;
-  padding-right: "150px";
-}

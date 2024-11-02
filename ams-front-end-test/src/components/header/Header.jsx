@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ThemeContext } from "../../store/context/theme/main";
 import styles from './Header.module.css'
 import { isDarkMode, Shade } from "../../store/context/theme/themes";
-import logo from '../../assets/header_icon.jpg'
+import Logo from "../logo/Logo";
+
 
 
 
@@ -22,8 +23,8 @@ const Header = () => {
     >
 
       
-        <img className={styles.logo} src={logo}  alt="logo-alt-img" />
-      
+      <Logo/>
+      {/* <BreadCrums /> */}
         {/* <ColorMode/> */}
     </div>
     </>
