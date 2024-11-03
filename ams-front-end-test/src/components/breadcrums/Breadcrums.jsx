@@ -6,11 +6,11 @@ const Breadcrums = () => {
   return (
     <div className={style.container}>
       {NAVIGATION.map((item, i) => (
-        <>
+        
           <Link className={style.link} key={i} to={item.path} >
           <div key={"breadcrum-"+i} className={style.breadcrums} > {item.label}  </div>
           </Link>
-        </>
+      
       ))}        
     </div>
   )

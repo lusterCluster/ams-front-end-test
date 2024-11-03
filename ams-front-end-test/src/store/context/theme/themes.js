@@ -74,7 +74,7 @@ function rgbToHex(rgb) {
 }
 
 const generateAutumnEmberPalette = createGradientPalette("AutumnEmber", 7);
-const AutumnEmberPalette = generateAutumnEmberPalette("#E8BCB9", "#1D1A39");
+const AutumnEmberPalette = generateAutumnEmberPalette("#FBB78E", "#001930");
 
 
   export const GrayScale = {

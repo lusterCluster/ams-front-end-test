@@ -1,12 +1,9 @@
 .desktop {
     display: grid;
     padding: 0px;    
-    height: 100vh;    
-    margin: 100px 50px;
+    height: 100vh;            
+    place-items: center;    
     
-    place-items: center;
-    row-gap: 55px;
-    column-gap: 34px;
   }
   
   .mobile {

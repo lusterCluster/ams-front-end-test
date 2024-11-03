@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <Link className={styles.logo} >
     <svg
-      fill={context.theme.pallete(context.isDarkMode() ? Shade.Dark : Shade.LightSurface)}
+      fill={context.theme.pallete(context.isDarkMode() ? Shade.Focus : Shade.Surface)}
       height="2rem"
       width="2rem"
       version="1.1"
@@ -41,7 +41,7 @@ const Logo = () => {
         <g></g>
       </g>
     </svg>
-    <p style={{color: context.theme.pallete(context.isDarkMode() ? Shade.Dark : Shade.LightSurface)}} >Smart Phone Store</p>
+    <p style={{color: context.theme.pallete(context.isDarkMode() ? Shade.Focus : Shade.Surface)}} >Smart Phone Store</p>
     </Link>
   );
 };

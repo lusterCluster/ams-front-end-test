@@ -20,7 +20,7 @@ const Header = () => {
         background: context.
           theme.pallete(
             context.isDarkMode() 
-            ? Shade.Surface 
+            ? Shade.SecondaryDark 
             : Shade.Surface),
       }}
     >

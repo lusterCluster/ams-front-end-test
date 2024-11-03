@@ -1,0 +1,35 @@
+.card{
+    display: inline-block;
+    flex-direction: column;    
+    border-radius: 12px;
+    border: solid 1px;
+    width: 250px;
+    height: 350px;    
+}
+.image{
+    display: grid;
+    place-items: center;
+    width: fit-content;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.imgContainer{
+    display: grid;
+    place-items: center;    
+    background-color: white;
+    width: 100%;
+}
+.head{
+    margin-left: 16px;
+    margin-top: 15%;
+    font-size: 21px;
+    height: 16px;   
+    font-weight: bold;
+    color: white;
+}
+.subhead{
+    height: 16px;
+    margin-top: 10%;
+    margin-left: 16px;
+}
