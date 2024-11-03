@@ -1,10 +1,10 @@
 .logo {
     grid-column-start: 1;
-    display: flex;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 9999px;
-    object-fit: cover;
+    display: flex;        
+    font-size: 18px;  
+    line-height: 1%;
     padding-right: "150px";
+    font-style: italic;
+    text-decoration: none;
   }
   

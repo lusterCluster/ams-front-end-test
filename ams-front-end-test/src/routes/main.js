@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Root } from "../pages/root/Root";
+import ProductList from "../pages/product/ProductList";
 
-const PATHS = {
-    root: "/"
-}
+
+
 
 const router = createBrowserRouter([
     {
-        path: PATHS.root,
+        path: "/",
         element: <Root/>,
         children: [
             {
-
+                path: "/product-list",
+                element: <ProductList/>
             }
         ]
     }
