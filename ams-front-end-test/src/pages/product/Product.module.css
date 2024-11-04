@@ -30,12 +30,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);   
     width: 100%;
-    max-height: 500px;
+    height: fit-content;
     border-radius: 16px;
     margin-right:  100px;
     margin-left: 100px;
     padding: 50px;
     place-items: center;
+    background-color: white;
 }
 .productImage{
     width: 250px;
@@ -46,7 +47,49 @@
     flex-direction: row;    
 }
 .details {
-    width: 340px;
-    height: 210px;
+    width: 500px;
+    height: fit-content;
     border-radius: 20px;
 }
+.gridItem{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.actionButton{
+    border: none;
+    height: 34px;
+    width: 89px;
+    border-radius: 8px;
+
+}
+.phoneUl * + *{
+    margin-top: 1rem;
+    padding-right: 16px;
+}
+.detailsHead {
+    padding-left: 16px;    
+
+}
+.actions{
+    display: flex;
+    padding: 16px;
+    align-content: center;
+    gap: 8px;
+}
+
+.selected {
+    background-color: #4CAF50; /* Color de selección */
+    color: white;
+  }
+  
+  .hovered {
+    background-color: #e0e0e0; /* Color de hover */
+  }
+  
+  .warning {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 8px;
+  }
