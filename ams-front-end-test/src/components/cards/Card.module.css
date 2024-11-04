@@ -1,10 +1,10 @@
 .card{
     display: inline-block;
     flex-direction: column;    
-    border-radius: 12px;
-    border: solid 1px;
+    border-radius: 12px;    
     width: 250px;
-    height: 350px;    
+    height: 375px;    
+    box-shadow:  0px 3px 8px;
 }
 .image{
     display: grid;
@@ -22,7 +22,7 @@
 }
 .head{
     margin-left: 16px;
-    margin-top: 15%;
+    margin-top: 8%;
     font-size: 21px;
     height: 16px;   
     font-weight: bold;
@@ -32,4 +32,16 @@
     height: 16px;
     margin-top: 10%;
     margin-left: 16px;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: end;
+    margin-right: 16px;
+    margin-bottom: 100px;
+    text-decoration: none;
+}
+.button{
+    border-radius: 16px;
+    height: 35px;
+    border: none;    
 }

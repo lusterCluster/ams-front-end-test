@@ -1,0 +1,28 @@
+.container{
+    height: 32px;
+     width: 221px; 
+     gap:3px; 
+     display: flex; 
+     padding: 5px; 
+     border-radius: 6px;
+     background: white;
+     margin-bottom: 21px;
+     
+}   
+.input {
+    border: none;       
+    outline: none;      
+  }
+  
+  .input:focus {
+    border: none;       
+    outline: none;      
+  }
+  .cleanButton{
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 21px;
+    opacity: 50%;
+  }
+  

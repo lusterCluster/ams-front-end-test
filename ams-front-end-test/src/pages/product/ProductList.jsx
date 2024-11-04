@@ -1,78 +1,70 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import styles from './Product.module.css'
-import { ProductContext } from '../../store/context/product/productContext';
-import Card from '../../components/cards/Card';
+import React, { useContext, useEffect, useRef, useState } from "react";
+import styles from "./Product.module.css";
+import { ProductContext } from "../../store/context/product/productContext";
+import Card from "../../components/cards/Card";
+import { ThemeContext } from "../../store/context/theme/main";
+import { Shade } from "../../store/context/theme/themes";
+import Searchbar from "../../components/searchbar/Searchbar";
+import { useNavigate } from "react-router-dom";
 const ProductList = () => {
-    const productContext= useContext(ProductContext)
-    const [items, setItems] = useState(productContext.state); 
-    console.log(items)
-  const [loading, setLoading] = useState(false);
-  const containerRef = useRef(null);
-
-  // Función para cargar más elementos
+  const productContext = useContext(ProductContext);
+  const themeContext = useContext(ThemeContext)
+  const [visibleItems, setVisibleItems] = useState(productContext.state.slice(0, 10));
+  const [hasMoreItems, setHasMoreItems] = useState(true);
+  const navigate = useNavigate()
   const loadMoreItems = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setItems((prevItems) => [
-        ...prevItems,
-        ...Array.from({ length: 20 }), // Añade 20 nuevos elementos
-      ]);
-      setLoading(false);
-    }, 1000);
-  };
-
-  // Detecta si el usuario llegó al final del contenedor
-  const handleScroll = () => {
-    if (
-      containerRef.current.scrollHeight - containerRef.current.scrollTop <=
-        containerRef.current.clientHeight &&
-      !loading
-    ) {
-      loadMoreItems();
+    const nextItems = productContext.state.slice(visibleItems.length, visibleItems.length + 10);
+    setVisibleItems((prevItems) => [...prevItems, ...nextItems]);
+    if (visibleItems.length + nextItems.length >= productContext.state.length) {
+      setHasMoreItems(false);
     }
   };
-
+ const handleAddProduct = (id) => {navigate("/product-details",{state: productContext.state.find(product => product.id === id) })}
   useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-    }
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [loading]);
+    const handleScroll = (e) => {
+      const { scrollTop, scrollHeight, clientHeight } = e.target;
+      if (scrollTop + clientHeight >= scrollHeight && hasMoreItems) {
+        loadMoreItems();
+      }
+    };
+
+    const container = document.getElementById('scrollable-grid');
+    container.addEventListener('scroll', handleScroll);
+
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [visibleItems, hasMoreItems]);
+
 
   return (
+    <>    
+    <Searchbar/>
     <div
-      ref={containerRef}
+      id="scrollable-grid"
       style={{
-        height: "500px",
-        overflowY: "auto",
+        background: themeContext.theme.pallete(themeContext.isDarkMode() ? Shade.Surface : Shade.Focus)
       }}
       className={styles.grid}
     >
-      {items.map((product, index) => (
+      {productContext.state.map((product, index) => (
         <div
-          key={index}
-          style={{
-            width: "100px",
-            height: "100px",
-            backgroundColor: "lightcoral",
-            margin: "10px",
-          }}
+          key={index}          
         >
-        <ProductItem imgUrl={product.imgUrl} head={product.model} details={[product.brand, `$${product.price}`]} />
-        
+          <ProductItem
+            onClick={() => handleAddProduct(product.id)}
+            imgUrl={product.imgUrl}
+            head={product.model}
+            details={[product.brand, `$${product.price}`]}
+          />
         </div>
-      ))}
-      {loading && <p>Loading...</p>}
+      ))}      
     </div>
-  )
-
-}
+    </>
+  );
+};
 const ProductItem = (props) => {
-    
-  return(
-      <Card imgUrl={props.imgUrl} head={props.head} details={props.details} />
-  )
-}
+  return (
+    <Card onClick={props.onClick} imgUrl={props.imgUrl} head={props.head} details={props.details} />
+  );
+};
 
-export default ProductList
+export default ProductList;

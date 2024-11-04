@@ -5,6 +5,7 @@ import { Shade } from "../../store/context/theme/themes";
 import Logo from "../logo/Logo";
 import Breadcrums from "../breadcrums/Breadcrums";
 import { CartLogo } from "../cart/cartlogo/CartLogo";
+import ColorMode from "../buttons/colormode/ColorMode";
 
 
 
@@ -21,15 +22,18 @@ const Header = () => {
           theme.pallete(
             context.isDarkMode() 
             ? Shade.SecondaryDark 
-            : Shade.Surface),
+            : Shade.Focus),
       }}
     >
 
       
       <Logo/>
       <Breadcrums/>
+      <div>
+
       <CartLogo/>
-        {/* <ColorMode/> */}
+        <ColorMode/>
+      </div>
     </div>
     </>
   );
