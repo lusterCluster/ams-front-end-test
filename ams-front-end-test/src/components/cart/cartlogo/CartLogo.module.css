@@ -2,7 +2,10 @@
     display: flex;    
     justify-content: right;
     margin-right: 35px;
-    position: relative;
+    position: absolute;
+    z-index: -1000;
+    right: 0;
+    width: fit-content;
     
 }
 .cartLogo{    
@@ -11,4 +14,5 @@
     right: 1%;
     position: absolute;
     padding: 3px;
+    z-index: -100;
 }

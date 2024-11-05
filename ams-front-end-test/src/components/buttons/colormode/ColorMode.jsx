@@ -15,7 +15,7 @@ const ColorMode = () => {
   const handleMouseLeave = () => {
     document.getElementById("dark-mode-button").style.backgroundColor =
       context.theme.pallete(
-        context.isDarkMode() ? Shade.Dark : Shade.Surface
+        context.isDarkMode() ? Shade.Dark : Shade.Hover
       );
   };
   const handleToggle = () => {
@@ -28,7 +28,7 @@ const ColorMode = () => {
       id="dark-mode-button"
       className={styles.button}
       style={{        
-        background: context.theme.pallete(context.isDarkMode() ? Shade.Dark: Shade.Surface),
+        background: context.theme.pallete(context.isDarkMode() ? Shade.Dark: Shade.Hover),
       }}
       onClick={handleToggle}
       onMouseEnter={handleMouseEnter}
@@ -38,7 +38,7 @@ const ColorMode = () => {
         className="material-symbols-outlined"
         style={{
           fontSize: "21px",
-          color: context.theme.pallete(Shade.LightSurface),
+          color: context.theme.pallete(context.isDarkMode() ? Shade.LightSurface: Shade.Surface),
         }}
       >
         {icon}

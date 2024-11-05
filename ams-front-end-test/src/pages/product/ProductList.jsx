@@ -6,6 +6,7 @@ import { ThemeContext } from "../../store/context/theme/main";
 import { Shade } from "../../store/context/theme/themes";
 import Searchbar from "../../components/searchbar/Searchbar";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/loader/Loader";
 const ProductList = () => {
   const productContext = useContext(ProductContext);
   const themeContext = useContext(ThemeContext)
@@ -34,14 +35,18 @@ const ProductList = () => {
     return () => container.removeEventListener('scroll', handleScroll);
   }, [visibleItems, hasMoreItems]);
 
-
+if(productContext.loading) {
+  return(
+    <Loader/>
+  )
+}
   return (
     <>    
     <Searchbar/>
     <div
       id="scrollable-grid"
       style={{
-        background: themeContext.theme.pallete(themeContext.isDarkMode() ? Shade.Surface : Shade.Focus)
+        background: themeContext.theme.pallete(themeContext.isDarkMode() ? Shade.Surface : Shade.Hover)
       }}
       className={styles.grid}
     >

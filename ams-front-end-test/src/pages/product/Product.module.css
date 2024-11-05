@@ -6,7 +6,7 @@
     column-gap: 50px;
     row-gap: 100px;
     padding: 50px;
-    max-height: 500px;
+    max-height: 720px;
     overflow-y: auto;
     place-items: center;
     border-radius: 16px;
@@ -53,9 +53,15 @@
 }
 .gridItem{
     display: flex;
+    gap: 21px;
     width: 100%;
     flex-direction: column;
     
+}
+
+.actionsContainer {
+    width: 500px;
+    border-radius: 20px;
 }
 .actionButton{
     border: none;
@@ -64,19 +70,23 @@
     border-radius: 8px;
 
 }
+
+.actions{
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+    gap: 8px;
+}
 .phoneUl * + *{
     margin-top: 1rem;
     padding-right: 16px;
 }
-.detailsHead {
+.padding16 {
     padding-left: 16px;    
 
 }
-.actions{
-    display: flex;
-    padding: 16px;
-    align-content: center;
-    gap: 8px;
+.textCenter {
+    text-align: center;
 }
 
 .selected {
@@ -92,4 +102,37 @@
     color: red;
     font-size: 0.9em;
     margin-top: 8px;
+  }
+
+  .addButtonContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 21px;
+    padding-top: 20px;
+  }
+  .addButton{
+    color: white;
+    border: none;
+    height: 60px;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 21px;
+  }
+  .arrowBack{
+    font-size: 55px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  .gridItem2{    
+    display: flex;
+    width: 100%;
+    gap: 250px;
+    align-items: center;
+    color: gray;
+  }
+  .loaderContainer{
+    display: grid;
+    height: 100%;
+    place-items: center;
   }

@@ -22,7 +22,7 @@ const Header = () => {
           theme.pallete(
             context.isDarkMode() 
             ? Shade.SecondaryDark 
-            : Shade.Focus),
+            : Shade.Surface),
       }}
     >
 
@@ -30,9 +30,11 @@ const Header = () => {
       <Logo/>
       <Breadcrums/>
       <div>
+     <div className={styles.itemContainer} >
 
-      <CartLogo/>
         <ColorMode/>
+      <CartLogo/>
+     </div>
       </div>
     </div>
     </>
